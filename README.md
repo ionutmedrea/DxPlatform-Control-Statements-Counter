@@ -105,7 +105,9 @@ This file contains a list of json objects, each object representing an entry wit
   ...
 ]
 ```
-Now you can import this file into DxPlatform and go look at the System Map to see the results. It should look like this:
+Now you can import this file into DxPlatform and go look at the System Map and select the Control Statements category to see the results. It should look like this:
+![if-statements](img/if_fullscreen.png)
+You can click on any of the five control statements to see which files contain or not contain them. The intensity of the colour tells if a file contain more or less control statements. 
 
 # How it is made?
 The tool is written in Java and uses the [Java Parser](https://javaparser.org/) library.
