@@ -21,16 +21,16 @@ You can clone this repository with the following command:
 ```
 git clone https://github.com/fmatheiu98/DxPlatform-Control-Statements-Counter.git
 ```
-Then, inside the repository you can find a file called `run.sh` that you can invoke from a terminal in order to create an executable jar file.
+Then, inside the repository you can find a two files called `run.sh` and `run.bat`. You can invoke one of the files (depending if you are on Windows or Unix) from a terminal in order to create an executable jar file.
 
 Firstly, you must have Java-JDK installed on your computer.
 If you have it installed, then if you run the command `java -version` it should return the version of JDK present on your computer.
 If you don't have it installed, you can get it from [here](https://www.oracle.com/ro/java/technologies/javase-downloads.html).
 
-To invoke `run.sh` you must also have **Maven** installed on your computer. To check if you have it installed, you can run the command `mvn -v` and it should display the version of Maven.
+To invoke `run.sh`/`run.bat` you must also have **Maven** installed on your computer. To check if you have it installed, you can run the command `mvn -v` and it should display the version of Maven.
 If you don't have it installed, you can download it from [here](https://maven.apache.org/download.cgi) and install it following the instructions from [here](https://maven.apache.org/install.html).
 
-After you run `run.sh`, it should create the executable jar that you can run by following the instructions below.
+After you run `run.sh`/`run.bat`, it should create the executable jar that you can run by following the instructions below.
 
 # Configuration
 In order to run this tool on a project, you need to edit the configuration file (`config.txt`) located in the `config` folder.
@@ -72,12 +72,12 @@ baseFolderPath=/project_root
 
 To run the tool from the docker container, you need to be located in the project folder and execute:
 ```
-docker-compose run control-statement-counter config/config.txt
+docker-compose run control-statements-counter config/config.txt
 ```
 
 If you don't want to use the docker-compose file, you can run the tool with the command (you need to change the current directory and the project root paths to match with your system):
 ```
-docker run -v {current-directory path}\config:/control_stmt_counter/config -v {project_root_path}:/project_root -v {current-directory path}:/control_stmt_counter fmatheiu98/control_statements_counter config/config.txt
+docker run -v {current-directory path}/config:/control_stmt_counter/config -v {project_root_path}:/project_root -v {current-directory path}:/control_stmt_counter fmatheiu98/control-statements-counter config/config.txt
 ```
 
 # Results
