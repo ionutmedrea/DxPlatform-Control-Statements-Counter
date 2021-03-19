@@ -40,7 +40,7 @@ If you don't have it installed, you can get it from [here](https://www.oracle.co
 
 You can run the tool with the following command:
 ```
-java -jar control_statements_counter.jar config/config.txt
+java -jar control_stmt_counter.jar config/config.txt
 ```
 
 ## From Docker
