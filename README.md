@@ -12,23 +12,21 @@ It provides a properties file which contains the number of each mentioned contro
 
 ## From Github
 To install this tool, please download from the latest release from Github, the control_statements_counter.zip archive and unzip it to your preferred location. The contents of the archive are:
-* `control_statements_counter.jar` - the executable jar file
+* `control_stmt_counter.jar` - the executable jar file
 * `config` - a folder which contains the configuration file, `config.txt`
 * `docker-compose.yml` - a configuration file for running the docker container easily
-
-## From Docker
-
 
 ## From Code
 You can clone this repository with the following command:
 ```
 git clone https://github.com/fmatheiu98/DxPlatform-Control-Statements-Counter.git
 ```
-Then, inside the repository you can find a file called `run.sh` that you can invoke from a terminal with the following command:
-```
----------
-```
-It should create the executable jar that you can run by following the instructions below.
+Then, inside the repository you can find a file called `run.sh` that you can invoke from a terminal.
+
+To invoke `run.sh` you must have **Maven** installed on your computer. To check if you have it installed, you can run the command `mvn -v` and it should display the version of Maven.
+If you don't have it installed, you can download it from [here](https://maven.apache.org/download.cgi) and install it following the instructions from [here](https://maven.apache.org/install.html).
+
+After you run `run.sh`, it should create the executable jar that you can run by following the instructions below.
 
 # Configuration
 In order to run this tool on a project, you need to edit the configuration file (`config.txt`) located in the `config` folder.
@@ -46,7 +44,7 @@ java -jar control_statements_counter.jar config/config.txt
 ```
 
 ## From Docker
-First, you need to have Docker Desktop installed on your computer.
+Firstly, you need to have Docker Desktop installed on your computer.
 If you have it installed, then if you run the command `docker -v` it should return the version of Docker present on your computer.
 If you don't have it installed, you can get it from [here](https://www.docker.com/products/docker-desktop).
 

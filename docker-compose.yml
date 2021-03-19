@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  control-statements-counter:
+    image: fmatheiu98/control-statements-counter
+    volumes:
+    - .\config:/control_stmt_counter/config
+    - .\:/control_stmt_counter
+    - C:\Users\flavi\.dx-platform\projects\Apache_Pulsar\repository\pulsar:/project_root
