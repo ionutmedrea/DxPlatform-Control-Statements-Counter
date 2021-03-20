@@ -56,8 +56,8 @@ Then you need to modify `docker-compose.yml` and change the last volume by addin
 version: "3.8"
 
 services:
-  control-statement-counter:
-    image: fmatheiu98/control_statements_counter
+  control-statements-counter:
+    image: fmatheiu98/control-statements-counter
     volumes:
     - .\config:/control_stmt_counter/config
     - .\:/control_stmt_counter
