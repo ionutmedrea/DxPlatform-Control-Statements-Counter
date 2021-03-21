@@ -72,7 +72,7 @@ baseFolderPath=/project_root
 
 To run the tool from the docker container, you need to be located in the project folder and execute:
 ```
-docker-compose run control-statements-counter config/config.txt
+docker-compose run control-stmt-counter config/config.txt
 ```
 
 If you don't want to use the docker-compose file, you can run the tool with the command (you need to change the current directory and the project root paths to match with your system):
