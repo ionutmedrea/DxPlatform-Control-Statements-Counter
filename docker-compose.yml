@@ -6,4 +6,4 @@ services:
     volumes:
     - .\config:/control_stmt_counter/config
     - .\:/control_stmt_counter
-    - C:\Users\flavi\.dx-platform\projects\Apache_Pulsar\repository\pulsar:/project_root
+    - {path-to-project-root}:/project_root

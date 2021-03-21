@@ -11,7 +11,7 @@ It provides a properties file which contains the number of each mentioned contro
 # Installation
 
 ## From Github
-To install this tool, please download from the latest release from Github, the control_statements_counter.zip archive and unzip it to your preferred location. The contents of the archive are:
+To install this tool, please download from the latest release from Github, the `control_statements_counter.zip` archive and unzip it to your preferred location. The contents of the archive are:
 * `control_stmt_counter.jar` - the executable jar file
 * `config` - a folder which contains the configuration file, `config.txt`
 * `docker-compose.yml` - a configuration file for running the docker container easily
@@ -21,12 +21,16 @@ You can clone this repository with the following command:
 ```
 git clone https://github.com/fmatheiu98/DxPlatform-Control-Statements-Counter.git
 ```
-Then, inside the repository you can find a file called `run.sh` that you can invoke from a terminal.
+Then, inside the repository you can find a two files called `run.sh` and `run.bat`. You can invoke one of the files (depending if you are on Windows or Unix) from a terminal in order to create an executable jar file.
 
-To invoke `run.sh` you must have **Maven** installed on your computer. To check if you have it installed, you can run the command `mvn -v` and it should display the version of Maven.
+Firstly, you must have Java-JDK installed on your computer.
+If you have it installed, then if you run the command `java -version` it should return the version of JDK present on your computer.
+If you don't have it installed, you can get it from [here](https://www.oracle.com/ro/java/technologies/javase-downloads.html).
+
+To invoke `run.sh`/`run.bat` you must also have **Maven** installed on your computer. To check if you have it installed, you can run the command `mvn -v` and it should display the version of Maven.
 If you don't have it installed, you can download it from [here](https://maven.apache.org/download.cgi) and install it following the instructions from [here](https://maven.apache.org/install.html).
 
-After you run `run.sh`, it should create the executable jar that you can run by following the instructions below.
+After you run `run.sh`/`run.bat`, it should create the executable jar that you can run by following the instructions below.
 
 # Configuration
 In order to run this tool on a project, you need to edit the configuration file (`config.txt`) located in the `config` folder.
@@ -34,41 +38,46 @@ There you need to **specify the ID** for the analysed project and the **root fol
 
 # How to run it?
 ## From command line
-Firstly you must have `java` installed on your computer.
-If you have it installed, then if you run the command `java -version` it should return the version of Java present on your computer.
-If you don't have it installed, you can get it from [here](https://www.oracle.com/ro/java/technologies/javase-downloads.html).
+You need to have a Java-JDK in order to run the executable jar file. You can follow the instructions on how to install a JDK from **Installation**.
 
 You can run the tool with the following command:
 ```
-java -jar control_statements_counter.jar config/config.txt
+java -jar control_stmt_counter.jar config/config.txt
 ```
 
 ## From Docker
 Firstly, you need to have Docker Desktop installed on your computer.
-If you have it installed, then if you run the command `docker -v` it should return the version of Docker present on your computer.
+To check if you have it installed, you can run the command `docker -v` and it should return the version of Docker present on your computer.
 If you don't have it installed, you can get it from [here](https://www.docker.com/products/docker-desktop).
+You also need to have a directory called `config` which contains a `config.txt` file in the directory where you execute the commands from below.
 
 Then you need to modify `docker-compose.yml` and change the last volume by adding the path to the project root folder. It should look like this:
 ```
 version: "3.8"
 
 services:
-  control-statement-counter:
-    image: fmatheiu98/control_statements_counter
+  control-statements-counter:
+    image: fmatheiu98/control-statements-counter
     volumes:
     - .\config:/control_stmt_counter/config
     - .\:/control_stmt_counter
     - {path-to-project-root}:/project_root
 ```
 
-To run the tool from the docker container, you need to be located in the project folder and execute:
+Then you need to write **/project_root** at the baseFolderPath in the `config/config.txt`. It should look something like this:
 ```
-docker-compose run control-statement-counter config/config.txt
+projectId=pulsar
+baseFolderPath=/project_root
 ```
 
-If you don't want to use the docker-compose file, you can run the tool with:
+To run the tool from the docker container, you need to be located in the project folder and execute:
 ```
-docker run -v {current-directory/project-directory path}\config:/control_stmt_counter/config -v {project_root_path}:/project_root -v {current-directory/project-directory path}:/control_stmt_counter fmatheiu98/control_statements_counter config/config.txt
+docker-compose run control-statements-counter config/config.txt
+```
+
+If you don't want to use the docker-compose file, you can run the tool with the command (you need to change the current directory and the project root paths to match with your system):
+```
+docker run -v {current-directory path}/config:/control_stmt_counter/config -v {project_root_path}:/project_root -v {current-directory path}:/control_stmt_counter fmatheiu98/control-statements-counter config/config.txt
 ```
 
 # Results
@@ -96,7 +105,9 @@ This file contains a list of json objects, each object representing an entry wit
   ...
 ]
 ```
-Now you can import this file into DxPlatform and go look at the System Map to see the results. It should look like this:
+Now you can import this file into DxPlatform and go look at the System Map and select the Control Statements category to see the results. It should look like this:
+![if-statements](img/if_fullscreen.png)
+You can click on any of the five control statements to see which files contain or not contain them. The intensity of the colour tells if a file contain more or less control statements. 
 
 # How it is made?
 The tool is written in Java and uses the [Java Parser](https://javaparser.org/) library.
