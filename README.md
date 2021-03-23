@@ -59,8 +59,8 @@ services:
   control-statements-counter:
     image: fmatheiu98/control-statements-counter
     volumes:
-    - .\config:/control_stmt_counter/config
-    - .\:/control_stmt_counter
+    - ./config:/control_stmt_counter/config
+    - ./:/control_stmt_counter
     - {path-to-project-root}:/project_root
 ```
 
