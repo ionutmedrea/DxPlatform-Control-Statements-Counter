@@ -46,6 +46,8 @@ java -jar control_stmt_counter.jar config/config.txt
 ```
 
 ## From Docker
+This tool is also stored in a Docker image available on DockerHub. You can find it [here](https://hub.docker.com/repository/docker/fmatheiu98/control-statements-counter).
+
 Firstly, you need to have Docker Desktop installed on your computer.
 To check if you have it installed, you can run the command `docker -v` and it should return the version of Docker present on your computer.
 If you don't have it installed, you can get it from [here](https://www.docker.com/products/docker-desktop).
