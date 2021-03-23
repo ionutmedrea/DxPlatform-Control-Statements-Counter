@@ -38,7 +38,7 @@ There you need to **specify the ID** for the analysed project and the **root fol
 
 # How to run it?
 ## From command line
-You need to have a Java-JDK in order to run the executable jar file. You can follow the instructions on how to install a JDK from **Installation**.
+You need to have Java JRE/JDK in order to run the executable jar file. You can follow the instructions on how to install a JRE/JDK from **Installation**.
 
 You can run the tool with the following command:
 ```
@@ -105,7 +105,10 @@ This file contains a list of json objects, each object representing an entry wit
   ...
 ]
 ```
-Now you can import this file into DxPlatform and go look at the System Map and select the Control Statements category to see the results. It should look like this:
+Now you can import this file into DxPlatform:
+![if-statements](img/upload_prop.png)
+
+Then you can go look at the System Map and select the Control Statements category to see the results. It should look like this:
 ![if-statements](img/if_fullscreen.png)
 You can click on any of the five control statements to see which files contain or not contain them. The intensity of the colour tells if a file contain more or less control statements. 
 
