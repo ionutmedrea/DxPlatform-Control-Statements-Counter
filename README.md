@@ -11,7 +11,7 @@ It provides a properties file which contains the number of each mentioned contro
 # Installation
 
 ## From Github
-To install this tool, please download from the latest release from Github, the `control_statements_counter.zip` archive and unzip it to your preferred location. The contents of the archive are:
+To install this tool, please download from the [latest release](https://github.com/fmatheiu98/DxPlatform-Control-Statements-Counter/releases/tag/v1.0.0) from Github, the `control_statements_counter.zip` archive and unzip it to your preferred location. The contents of the archive are:
 * `control_stmt_counter.jar` - the executable jar file
 * `config` - a folder which contains the configuration file, `config.txt`
 * `docker-compose.yml` - a configuration file for running the docker container easily
