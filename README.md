@@ -114,6 +114,10 @@ Then you can go look at the System Map and select the Control Statements categor
 ![if-statements](img/if_fullscreen.png)
 You can click on any of the five control statements to see which files contain or not contain them. The intensity of the colour tells if a file contain more or less control statements. 
 
+The results are also visible in the Quality Model/Quality Dimension section after you restart DxPlatform.
+![if-statements](img/quality_modelV2.png)
+
+![if-statements](img/quality_model_stmt.png)
 # How it is made?
 The tool is written in Java and uses the [Java Parser](https://javaparser.org/) library.
 For each java file in the analysed project, the program generates an Abstract Syntax Tree which means a Java object representation of the code in that file.
