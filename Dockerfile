@@ -1,4 +1,4 @@
-FROM openjdk:15
+FROM openjdk:11
 
 WORKDIR /control_stmt_counter
 

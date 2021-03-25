@@ -11,7 +11,7 @@ It provides a properties file which contains the number of each mentioned contro
 # Installation
 
 ## From Github
-To install this tool, please download from the latest release from Github, the `control_statements_counter.zip` archive and unzip it to your preferred location. The contents of the archive are:
+To install this tool, please download from the [latest release](https://github.com/fmatheiu98/DxPlatform-Control-Statements-Counter/releases/tag/v1.0.0) from Github, the `control_statements_counter.zip` archive and unzip it to your preferred location. The contents of the archive are:
 * `control_stmt_counter.jar` - the executable jar file
 * `config` - a folder which contains the configuration file, `config.txt`
 * `docker-compose.yml` - a configuration file for running the docker container easily
@@ -38,7 +38,7 @@ There you need to **specify the ID** for the analysed project and the **root fol
 
 # How to run it?
 ## From command line
-You need to have a Java-JDK in order to run the executable jar file. You can follow the instructions on how to install a JDK from **Installation**.
+You need to have Java JRE/JDK in order to run the executable jar file. You can follow the instructions on how to install a JRE/JDK from **Installation**.
 
 You can run the tool with the following command:
 ```
@@ -46,6 +46,8 @@ java -jar control_stmt_counter.jar config/config.txt
 ```
 
 ## From Docker
+This tool is also stored in a Docker image available on DockerHub. You can find it [here](https://hub.docker.com/repository/docker/fmatheiu98/control-statements-counter).
+
 Firstly, you need to have Docker Desktop installed on your computer.
 To check if you have it installed, you can run the command `docker -v` and it should return the version of Docker present on your computer.
 If you don't have it installed, you can get it from [here](https://www.docker.com/products/docker-desktop).
@@ -59,8 +61,8 @@ services:
   control-statements-counter:
     image: fmatheiu98/control-statements-counter
     volumes:
-    - .\config:/control_stmt_counter/config
-    - .\:/control_stmt_counter
+    - ./config:/control_stmt_counter/config
+    - ./:/control_stmt_counter
     - {path-to-project-root}:/project_root
 ```
 
@@ -105,10 +107,17 @@ This file contains a list of json objects, each object representing an entry wit
   ...
 ]
 ```
-Now you can import this file into DxPlatform and go look at the System Map and select the Control Statements category to see the results. It should look like this:
+Now you can import this file into DxPlatform:
+![if-statements](img/upload_prop.png)
+
+Then you can go look at the System Map and select the Control Statements category to see the results. It should look like this:
 ![if-statements](img/if_fullscreen.png)
 You can click on any of the five control statements to see which files contain or not contain them. The intensity of the colour tells if a file contain more or less control statements. 
 
+The results are also visible in the Quality Model/Quality Dimension section after you restart DxPlatform.
+![if-statements](img/quality_modelV2.png)
+
+![if-statements](img/quality_model_stmt.png)
 # How it is made?
 The tool is written in Java and uses the [Java Parser](https://javaparser.org/) library.
 For each java file in the analysed project, the program generates an Abstract Syntax Tree which means a Java object representation of the code in that file.
